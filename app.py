@@ -27,12 +27,3 @@ if uploaded_file is not None:
     st.success("Top-Ergebnisse:")
     for i, res in enumerate(results[:5], 1):
         st.write(f"{i}. **{res['label']}** – {res['score']:.1%} sicher")
-    st.subheader("Top 5 Vorhersagen")
-
-for i, res in enumerate(results[:5], 1):
-    with st.container(border=True):
-        cols = st.columns([4, 2])
-        with cols[0]:
-            st.write(f"**{i}. {res['label']}**")
-        with cols[1]:
-            st.metric(label="", value=f"{res['score']:.1%}", delta=None)
